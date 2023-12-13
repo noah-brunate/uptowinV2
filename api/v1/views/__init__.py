@@ -16,3 +16,4 @@ from api.v1.views.user_locals import *
 from api.v1.views.user_reviews import *
 from api.v1.views.user_officials import *
 from api.v1.views.user_internships import *
+

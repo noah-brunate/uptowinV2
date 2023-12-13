@@ -42,7 +42,7 @@ def delete_internship(user_id, internship_id):
 @app_views.route('/users/<string:user_id>/internships/<string:internship_id>',
                  methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user_internship/post.yml', methods=['POST'])
-def post_internship(user_id, internship_id):
+def p_internship(user_id, internship_id):
     """ post internship by id """
     user = storage.get(User, user_id)
     if user is None:
