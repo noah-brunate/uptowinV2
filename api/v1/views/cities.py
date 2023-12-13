@@ -10,15 +10,14 @@ from models.city import City
 from flasgger.utils import swag_from
 
 
-@app_views.route('/states/<string:state_id>/cities',
+@app_views.route('/cities',
                  methods=['GET'], strict_slashes=False)
 @swag_from('documentation/city/get.yml', methods=['GET'])
-def get_cities(state_id):
-    """ Gets cities for state_id """
-    state = storage.get(State, state_id)
-    if state is None:
+def get_cities():
+    """ Gets all the cities """
+    list_cities = [obj.to_dict() for obj in storage.all(City).values()]
+    if list_cities is None:
         abort(404)
-    list_cities = [obj.to_dict() for obj in state.cities]
     return jsonify(list_cities)
 
 
@@ -70,7 +69,7 @@ def create_obj_city(state_id):
                  strict_slashes=False)
 @swag_from('documentation/city/put.yml', methods=['PUT'])
 def post_city(city_id):
-    """  """
+    """ method updates a city instance """
     if not request.get_json():
         return make_response(jsonify({"error": "Not a JSON"}), 400)
     obj = storage.get(City, city_id)

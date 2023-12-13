@@ -59,7 +59,7 @@ def create_obj_local():
 @app_views.route('/locals/<string:local_id>', methods=['PUT'],
                  strict_slashes=False)
 @swag_from('documentation/local/put.yml', methods=['PUT'])
-def post_local(local_id):
+def p_local(local_id):
     """ """
     if not request.get_json():
         return make_response(jsonify({"error": "Not a JSON"}), 400)

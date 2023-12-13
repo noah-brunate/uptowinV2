@@ -42,7 +42,7 @@ def delete_official(user_id, official_id):
 @app_views.route('/users/<string:user_id>/user_official/<string:official_id>',
                  methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user_official/post.yml', methods=['POST'])
-def post_official(user_id, official_id):
+def p_official(user_id, official_id):
     """ post an official by id """
     user = storage.get(User, user_id)
     if user is None:
