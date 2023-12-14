@@ -10,52 +10,70 @@
 
     <title>MakeIt</title>
   </head>
-  <body>
+  <body ms-0>
     <!-- The body stats here -->
-    <div class="container position-relative">
-    <!-- Nav bar -->
-      <div class="container position-relative">
-        <ul class="nav">
-          <li class="nav-item">
+    <div class="container position-relative p-5 ms-0">
+      <!-- Nav bar -->
+      <div class="container position-relative border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
             <img src={{ url_for('static', filename='images/icon.png') }} class="" alt="...">
-            <a class="nav-link active" aria-current="page" href="#">Active</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">POST</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">About</a>
-          </li>
-        </ul>
+            <a class="navbar-brand" href="#">MakeIt</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pricing</a>
+                <div class="d-flex justify-content-end">
+                  <a class="nav-link" href="#">Disabled</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
       <!-- Filters -->
-      <div class="container position-relative">
-        <div class="container">
+      <div class="container position-relative p-5">
+        <div class="container border-bottom p-3">
           <div class="row">
             <div class="col">
-              Column
+              <h2>Filter by</h2>
             </div>
             <div class="col">
-              Column
+              <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  City
+                </a>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Default checkbox
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col">
-              Column
+              <button type="button" class="btn btn-danger">Search</button>
             </div>
           </div>
         </div>
-        <div class="container">
+        <div class="container mt-2">
           <div class="row">
             <div class="col">
-              Column
+              <a class="btn btn-primary" href="#" role="button">Internships</a>
             </div>
             <div class="col">
-              Column
+              <a class="btn btn-primary" href="#" role="button">Part-time jobs</a>
             </div>
             <div class="col">
-              Column
+              <a class="btn btn-primary" href="#" role="button">Full-time jobs</a>
             </div>
           </div>
         </div>
@@ -66,11 +84,11 @@
           {% for job in jobs %}
           {% endfor %}
         {% endblock %}
-       </div>
-       <!-- Footer part -->
-       <div class="container bottom boarder-top">
+      </div>
+      <!-- Footer part -->
+      <div class="container fixed-bottom border-top border-dark">
         <h4> Am in the foot </h4>
-       </div>
+      </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
