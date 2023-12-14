@@ -17,7 +17,7 @@
       <div class="container position-relative">
         <ul class="nav">
           <li class="nav-item">
-            <img src="..." class="" alt="...">
+            <img src={{ url_for('static', filename='images/icon.png') }} class="" alt="...">
             <a class="nav-link active" aria-current="page" href="#">Active</a>
           </li>
           <li class="nav-item">
@@ -63,7 +63,9 @@
       <!-- Body content -->
       <div class="container position-relative">
         {% block content %}
-        {% endblock}
+          {% for job in jobs %}
+          {% endfor %}
+        {% endblock %}
        </div>
        <!-- Footer part -->
        <div class="container bottom boarder-top">

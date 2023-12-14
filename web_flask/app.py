@@ -15,6 +15,11 @@ def landing_page():
     return render_template("landing_page.html")
 
 
+@app.route('/MakeIt', strict_slashes=False)
+def makeIt():
+    return render_template("index.html")
+
+
 @app.route('/home', strict_slashes=False)
 def home():
     """ home page """
